@@ -43,6 +43,33 @@
     "phone": "Phone",
     "whatsapp": "WhatsApp"
   },
+  "implementations": {
+    "title": "Audit Implementation",
+    "description": "SPMI implementation activities",
+    "filters": {
+      "period": "Period",
+      "unit": "Unit",
+      "all_periods": "All periods",
+      "all_units": "All units"
+    },
+    "table": {
+      "unit": "Unit",
+      "audit_name": "Audit Name",
+      "instrument": "Accreditation Institution Instrument",
+      "filling_date": "Answer Filling Time",
+      "filling_progress": "Answer Filling Progress",
+      "action": "Action"
+    },
+    "states": {
+      "error_title": "Data could not be loaded",
+      "filters_error": "Filter options could not be loaded.",
+      "load_error": "Audit implementations could not be loaded.",
+      "empty": "No audit implementation matches the filters."
+    },
+    "progress_aria": "Answer filling progress: {progress}%",
+    "action_aria": "View {audit} implementation",
+    "view": "View"
+  },
   "language": {
     "label": "Select language",
     "indonesian": "Bahasa Indonesia",
@@ -61,6 +88,7 @@
       "data": "SPMI Data",
       "preparation": "SPMI Preparation",
       "process": "SPMI Process",
+      "implementations": "Implementation",
       "repository": "SPMI Repository"
     }
   },

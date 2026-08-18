@@ -65,7 +65,37 @@
       >
         <ul class="mx-auto flex h-full min-w-max max-w-360 items-center gap-10 px-4 tablet:px-8 desktop:px-18">
           <li v-for="item in menuItems" :key="item.label">
+            <SDropdown
+              v-if="item.children"
+              v-model="selectedMenuItem"
+              align="start"
+              data-testid="default-layout-process-menu"
+            >
+              <template #trigger>
+                <button
+                  class="flex h-11 items-center gap-2 text-body-sm font-semibold text-white opacity-70"
+                  type="button"
+                >
+                  <i :class="item.icon" aria-hidden="true" />
+                  {{ t(item.label) }}
+                  <i class="si-heroicon-outline-chevron-down text-navigation-muted" aria-hidden="true" />
+                </button>
+              </template>
+
+              <div class="min-w-48 rounded-lg bg-white p-1 shadow-2">
+                <NuxtLink
+                  v-for="child in item.children"
+                  :key="child.label"
+                  :to="child.to"
+                  class="block rounded-md px-3 py-2 text-body-sm font-medium text-main hover:bg-primary-subtle"
+                >
+                  {{ t(child.label) }}
+                </NuxtLink>
+              </div>
+            </SDropdown>
+
             <button
+              v-else
               class="flex h-11 items-center gap-2 text-body-sm font-semibold text-white opacity-70"
               disabled
               type="button"
@@ -85,13 +115,19 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { SDropdown } from '@sutekipub/sicoco-v3-next'
 
 const { locale, setLocale, t } = useI18n()
+const selectedMenuItem = ref<string | null>(null)
 
 const menuItems = [
   { icon: 'si-heroicon-outline-briefcase', label: 'navigation.menus.data', expandable: false },
   { icon: 'si-heroicon-outline-globe-alt', label: 'navigation.menus.preparation', expandable: true },
-  { icon: 'si-heroicon-outline-academic-cap', label: 'navigation.menus.process', expandable: true },
+  {
+    icon: 'si-heroicon-outline-academic-cap',
+    label: 'navigation.menus.process',
+    children: [{ label: 'navigation.menus.implementations', to: '/pelaksanaan' }],
+  },
   { icon: 'si-heroicon-outline-clipboard-document-list', label: 'navigation.menus.repository', expandable: false },
 ]
 

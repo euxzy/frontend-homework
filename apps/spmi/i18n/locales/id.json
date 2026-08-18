@@ -43,6 +43,33 @@
     "phone": "Telepon",
     "whatsapp": "WhatsApp"
   },
+  "implementations": {
+    "title": "Pelaksanaan Audit",
+    "description": "Kegiatan pelaksanaan SPMI",
+    "filters": {
+      "period": "Periode",
+      "unit": "Unit",
+      "all_periods": "Semua periode",
+      "all_units": "Semua unit"
+    },
+    "table": {
+      "unit": "Unit",
+      "audit_name": "Nama Audit",
+      "instrument": "Instrumen Lembaga Akreditasi",
+      "filling_date": "Waktu Pengisian Jawaban",
+      "filling_progress": "Progres Pengisian Jawaban",
+      "action": "Aksi"
+    },
+    "states": {
+      "error_title": "Data tidak dapat dimuat",
+      "filters_error": "Pilihan filter tidak dapat dimuat.",
+      "load_error": "Pelaksanaan audit tidak dapat dimuat.",
+      "empty": "Tidak ada pelaksanaan audit yang sesuai dengan filter."
+    },
+    "progress_aria": "Progres pengisian jawaban: {progress}%",
+    "action_aria": "Lihat pelaksanaan {audit}",
+    "view": "Lihat"
+  },
   "language": {
     "label": "Pilih bahasa",
     "indonesian": "Bahasa Indonesia",
@@ -61,6 +88,7 @@
       "data": "Data SPMI",
       "preparation": "Persiapan SPMI",
       "process": "Proses SPMI",
+      "implementations": "Pelaksanaan",
       "repository": "Repositori SPMI"
     }
   },
