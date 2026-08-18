@@ -1,0 +1,10 @@
+.git
+.nx
+.output
+.nuxt
+node_modules
+coverage
+test-output
+dist
+.env
+npm-debug.log
