@@ -34,7 +34,7 @@
         "branch": "Kerjakan pada branch Anda sendiri.",
         "verify": "Pastikan lint dan build berhasil dijalankan.",
         "pr": "Buat Pull Request agar hasil implementasi dapat diperiksa.",
-        "summary": "Sertakan ringkasan perubahan dan hasil verifikasi pada deskripsi Pull Request."
+        "summary": "Sertakan langkah implementasi yang dilakukan pada deskripsi Pull Request."
       }
     }
   },

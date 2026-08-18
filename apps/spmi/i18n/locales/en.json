@@ -34,7 +34,7 @@
         "branch": "Work on your own branch.",
         "verify": "Ensure lint and build commands complete successfully.",
         "pr": "Create a Pull Request so the implementation can be reviewed.",
-        "summary": "Include a change summary and verification results in the Pull Request description."
+        "summary": "Include the implementation steps taken in the Pull Request description."
       }
     }
   },
