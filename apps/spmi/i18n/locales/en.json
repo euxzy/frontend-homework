@@ -1,0 +1,89 @@
+{
+  "about": {
+    "assignment": {
+      "eyebrow": "Frontend Homework",
+      "title": "Implement an SPMI Feature from Figma",
+      "description": "Build an application feature based on the provided design and ensure it is properly integrated into this application.",
+        "design_title": "Design Reference",
+        "design_description": "Use the following Figma design as the reference for the feature you will implement.",
+        "figma_mcp_hint": "Use Figma MCP to inspect the design.",
+        "open_figma": "Open design in Figma",
+      "steps_title": "Steps",
+      "steps": {
+        "repository": "Understand the repository's contents, structure, technologies, conventions, and existing implementation patterns.",
+        "login": "Sign in to the application with the provided credentials before starting the feature.",
+        "implement": "Review the Figma design, then implement the feature shown in that design.",
+        "ai_agent": "Use an AI coding agent to support the analysis and implementation process. The repository provides relevant supporting resources.",
+        "docker": "Ensure the application can be deployed with Docker.",
+        "implementations_api": "Use the GET /api/implementations endpoint for audit implementation data."
+      },
+      "requirements_title": "Implementation Requirements",
+      "requirements": {
+        "conventions": "Follow the architecture, folder structure, design system, and conventions already used in the repository.",
+        "responsive": "Ensure the interface works well at relevant screen sizes.",
+        "reuse": "Use available components where appropriate and avoid unnecessary duplication.",
+        "i18n": "Use the existing internationalization mechanism for interface text.",
+        "scope": "Do not modify unrelated parts of the application."
+      },
+      "credentials_title": "Login Credentials",
+      "username": "Username",
+      "password": "Password",
+      "submission_title": "Submission",
+      "submission": {
+        "fork": "Fork this repository to your GitHub account.",
+        "branch": "Work on your own branch.",
+        "verify": "Ensure lint and build commands complete successfully.",
+        "pr": "Create a Pull Request so the implementation can be reviewed.",
+        "summary": "Include a change summary and verification results in the Pull Request description."
+      }
+    }
+  },
+  "contact": {
+    "email": "Email",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp"
+  },
+  "language": {
+    "label": "Select language",
+    "indonesian": "Bahasa Indonesia",
+    "english": "English"
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "logo_alt": "Kampus Indonesia logo",
+    "university_name": "Kampus Indonesia",
+    "system_name": "Internal Quality Assurance System",
+    "notifications": "Notifications",
+    "profile": "User profile",
+    "user_name": "Jay Rakabuming",
+    "user_role": "Quality Assurance Agency",
+    "menus": {
+      "data": "SPMI Data",
+      "preparation": "SPMI Preparation",
+      "process": "SPMI Process",
+      "repository": "SPMI Repository"
+    }
+  },
+  "login": {
+    "university_name": "Suteki University",
+    "system_name": "Internal Quality Assurance System",
+    "logo_alt": "Suteki logo",
+    "campus_alt": "Campus building",
+    "contact_title": "Contact",
+    "copyright": "Copyright 2026 Suteki University",
+    "privacy_policy": "Privacy Policy",
+    "welcome_title": "Welcome back",
+    "welcome_subtitle": "Sign in to continue to your account.",
+    "google_alt": "Google",
+    "google_sign_in": "Sign in with Google",
+    "or": "or",
+    "username_label": "Username or email",
+    "username_placeholder": "Enter your username or email",
+    "username_required": "Username or email is required",
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
+    "password_required": "Password is required",
+    "forgot_password": "Forgot password?",
+    "submit": "Sign in"
+  }
+}

@@ -1,0 +1,102 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=722-11452&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "722:11452"
+  component_set: "Progress Bar"
+code:
+  component: "SProgress"
+  source: "lib/components/progress/Progress.vue"
+  import: "import { SProgress } from '@sutekitechid/sicoco-v3-next'"
+properties:
+  - figma: "Left Label"
+    type: "TEXT"
+    default: "Progress Label"
+    targets:
+      - kind: "prop"
+        component: "SProgress"
+        name: "label"
+  - figma: "Helper Text"
+    type: "TEXT"
+    default: "Supporting text"
+    targets:
+      - kind: "prop"
+        component: "SProgress"
+        name: "hint"
+  - figma: "Alignment"
+    type: "VARIANT"
+    default: "Default"
+    options:
+      - "Default"
+      - "Indent"
+      - "Inline"
+      - "Labelless"
+    targets:
+      - kind: "prop"
+        component: "SProgress"
+        name: "inline"
+        values:
+          "Default": false
+          "Indent": false
+          "Inline": true
+          "Labelless": true
+      - kind: "conditional-prop"
+        component: "SProgress"
+        name: "label"
+        values:
+          "Labelless": ""
+  - figma: "Style"
+    type: "VARIANT"
+    default: "Default"
+    options:
+      - "Default"
+      - "Success"
+      - "Warning"
+      - "Danger"
+    targets:
+      - kind: "prop"
+        component: "SProgress"
+        name: "variant"
+        values:
+          "Default": "primary"
+          "Success": "success"
+          "Warning": "warning"
+          "Danger": "danger"
+  - figma: "modelValue"
+    type: "DERIVED"
+    description: "Done=True overrides the progress level and renders SProgress at 100%."
+    sources:
+      - figma: "Level"
+        values:
+          "00": 0
+          "01": 12.5
+          "02": 25
+          "03": 37.5
+          "04": 50
+          "05": 62.5
+          "06": 75
+          "07": 87.5
+          "08": 100
+      - figma: "Done"
+        values:
+          "False": false
+          "True": true
+    targets:
+      - kind: "derived-prop"
+        component: "SProgress"
+        name: "modelValue"
+        override_when:
+          source: "Done"
+          value: "True"
+          result: 100
+slots:
+  - figma_layer: "Title"
+    component: "SProgress"
+    slot: "label"
+  - figma_layer: "Helper"
+    component: "SProgress"
+    slot: "hint"
+  - figma_layer: "Indent Default Icon"
+    component: "SProgress"
+    slot: "icon"

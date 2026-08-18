@@ -1,0 +1,18 @@
+@import '@sutekitechid/sicoco-v3-next/dist/config/tailwind.css';
+@source "../..";
+@source "../../../../../node_modules/@sutekitechid/sicoco-v3-next/**/*.{js,ts,jsx,tsx,vue}";
+
+@theme {
+    --color-navigation-main: #f85c0e;
+    --color-navigation-muted: #ffba98;
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        @apply border-main;
+    }
+}

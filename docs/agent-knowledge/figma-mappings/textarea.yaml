@@ -1,0 +1,19 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=2306-22767&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "2306:22767"
+  component_set: "text-editor"
+code:
+  component: "STextarea"
+  source: "lib/components/text-area/Textarea.vue"
+  import: "import { STextarea } from '@sutekitechid/sicoco-v3-next'"
+properties:
+  - figma: "placeholder"
+    type: "TEXT"
+    default: "Tambahkan keterangan......"
+    targets:
+      - kind: "prop"
+        component: "STextarea"
+        name: "placeholder"

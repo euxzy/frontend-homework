@@ -1,0 +1,44 @@
+{
+  "name": "figma",
+  "version": "1.0.0",
+  "description": "Figma MCP server — visual reference for Siakad-Next design system. Figma adalah referensi visual saja, bukan source of truth (lihat AGENTS.md §3).",
+  "type": "remote",
+  "url": "https://mcp.figma.com/mcp",
+  "auth": {
+    "type": "bearer",
+    "header": "X-Figma-Token",
+    "env_var": "FIGMA_PAT"
+  },
+  "scopes_needed": ["file:read"],
+  "common_tools": [
+    "get_file",
+    "get_node",
+    "get_image",
+    "get_comments"
+  ],
+  "conventions": {
+    "purpose": "Visual reference only. Teks spesifikasi dari user/PO tetap jadi source of truth.",
+    "use_for": [
+      "Lihat layout component sebelum implementasi",
+      "Cek color palette / spacing dari design",
+      "Cek typography scale"
+    ],
+    "do_not_use_for": [
+      "Ekstrak text spec dari Figma — pakai text spec dari user",
+      "Render pixel-perfect (visual ref saja)",
+      "Replace spec yang sudah ada di prompt"
+    ],
+    "rate_limit_notes": "Cache agresif; pakai file key + node ID, hindari full-file fetch berulang"
+  },
+  "examples": {
+    "get_file": {
+      "file_key": "<dari URL Figma, e.g. abc123XYZ>",
+      "description": "Ambil full file (gunakan jarang, berat)"
+    },
+    "get_node": {
+      "file_key": "<file_key>",
+      "node_id": "<node_id dari URL Figma>",
+      "description": "Ambil 1 node spesifik (preferred)"
+    }
+  }
+}

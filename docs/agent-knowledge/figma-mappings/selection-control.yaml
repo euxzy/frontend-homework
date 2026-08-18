@@ -1,0 +1,103 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=672-72404&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "672:72404"
+  component_set: "Selection Molecule"
+code:
+  component: "SCheckboxGroup"
+  source: "lib/components/checkbox/CheckboxGroup.vue"
+  import: "import { SCheckbox, SCheckboxGroup, SRadioGroup, SRadioGroupItem, SSwitch } from '@sutekitechid/sicoco-v3-next'"
+  composition:
+    - figma_value: "Radio"
+      components:
+        - component: "SRadioGroup"
+          role: "root"
+        - component: "SRadioGroupItem"
+          role: "control-and-label"
+    - figma_value: "Checkbox"
+      components:
+        - component: "SCheckboxGroup"
+          role: "root"
+        - component: "SCheckbox"
+          role: "control-and-label"
+    - figma_value: "Switch"
+      components:
+        - component: "SSwitch"
+          role: "control-and-label"
+properties:
+  - figma: "Controls"
+    type: "VARIANT"
+    default: "Radio"
+    options:
+      - "Radio"
+      - "Checkbox"
+      - "Switch"
+    targets:
+      - kind: "conditional-content"
+        values:
+          "Radio": "<SRadioGroup v-model=\"value\"><SRadioGroupItem value=\"option\">Label</SRadioGroupItem></SRadioGroup>"
+          "Checkbox": "<SCheckboxGroup :value=\"checked\"><SCheckbox value=\"option\">Label</SCheckbox></SCheckboxGroup>"
+          "Switch": "<SSwitch v-model=\"checked\">Label</SSwitch>"
+  - figma: "State"
+    type: "VARIANT"
+    default: "Default"
+    targets:
+      - kind: "conditional-prop"
+        component: "SCheckbox"
+        name: "disabled"
+        values:
+          "Disabled": true
+      - kind: "conditional-prop"
+        component: "SRadioGroupItem"
+        name: "disabled"
+        values:
+          "Disabled": true
+      - kind: "conditional-prop"
+        component: "SSwitch"
+        name: "disabled"
+        values:
+          "Disabled": true
+      - kind: "interaction-state"
+        components:
+          - "SCheckbox"
+          - "SRadioGroupItem"
+          - "SSwitch"
+        values:
+          "Default": "unchecked"
+          "Selected": "checked"
+          "Disabled": "unchecked"
+          "Disabled Selected": "checked"
+      - kind: "model"
+        component: "SCheckboxGroup"
+        name: "value"
+        values:
+          "Default": false
+          "Selected": true
+          "Disabled": false
+          "Disabled Selected": true
+      - kind: "model"
+        component: "SRadioGroup"
+        name: "modelValue"
+        item_value: "option"
+        values:
+          "Default": null
+          "Selected": "option"
+          "Disabled": null
+          "Disabled Selected": "option"
+      - kind: "model"
+        component: "SSwitch"
+        name: "modelValue"
+        values:
+          "Default": false
+          "Selected": true
+          "Disabled": false
+          "Disabled Selected": true
+slots:
+  - figma_layer: "Text"
+    components:
+      - "SCheckbox"
+      - "SRadioGroupItem"
+      - "SSwitch"
+    slot: "default"

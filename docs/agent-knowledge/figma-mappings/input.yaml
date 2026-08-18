@@ -1,0 +1,73 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=779-8238&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "779:8238"
+  component_set: "Input"
+code:
+  component: "SInput"
+  source: "lib/components/input/Input.vue"
+  import: "import { SInput } from '@sutekitechid/sicoco-v3-next'"
+properties:
+  - figma: "Placeholder"
+    type: "TEXT"
+    default: "Placeholder"
+    targets:
+      - kind: "prop"
+        component: "SInput"
+        name: "placeholder"
+  - figma: "Prefix"
+    type: "INSTANCE_SWAP"
+    default: "530:10039"
+    targets:
+      - kind: "named-slot"
+        component: "SInput"
+        name: "prefix"
+  - figma: "Suffix"
+    type: "INSTANCE_SWAP"
+    default: "530:10029"
+    targets:
+      - kind: "named-slot"
+        component: "SInput"
+        name: "suffix"
+  - figma: "Size"
+    type: "VARIANT"
+    default: "Large"
+    options:
+      - "Large"
+      - "Medium"
+      - "Small"
+      - "X-Small"
+    targets:
+      - kind: "prop"
+        component: "SInput"
+        name: "size"
+        values:
+          "Large": "lg"
+          "Medium": "md"
+          "Small": "sm"
+          "X-Small": null
+  - figma: "State"
+    type: "VARIANT"
+    default: "Default"
+    options:
+      - "Default"
+      - "On Focused"
+      - "On Typing"
+      - "On Typed"
+      - "Ready Only"
+      - "Disabled"
+      - "On Typing Error"
+      - "Error"
+    targets:
+      - kind: "prop"
+        component: "SInput"
+        name: "readonly"
+        values:
+          "Ready Only": true
+      - kind: "prop"
+        component: "SInput"
+        name: "disabled"
+        values:
+          "Disabled": true

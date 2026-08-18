@@ -1,0 +1,115 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=237-711&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "237:711"
+  component_set: "Tooltip"
+code:
+  component: "STooltip"
+  source: "lib/components/tooltip"
+  import: "import { STooltip, STooltipContent } from '@sutekitechid/sicoco-v3-next'"
+  composition:
+    - component: "STooltip"
+      role: "root"
+    - component: "STooltipContent"
+      role: "content"
+properties:
+  - figma: "Variant"
+    type: "VARIANT"
+    default: "Black"
+    options:
+      - "Black"
+      - "White"
+    targets:
+      - kind: "prop"
+        component: "STooltipContent"
+        name: "variant"
+        values:
+          "Black": "black"
+          "White": "white"
+  - figma: "Placement"
+    type: "VARIANT"
+    default: "Top"
+    options:
+      - "Top"
+      - "Bottom"
+      - "Right"
+      - "Left"
+    targets:
+      - kind: "prop"
+        component: "STooltipContent"
+        name: "position"
+        values:
+          "Top": "top"
+          "Bottom": "bottom"
+          "Right": "right"
+          "Left": "left"
+  - figma: "align"
+    type: "DERIVED"
+    description: "Derive Reka TooltipContent align from the side placement and Figma arrow position."
+    sources:
+      - figma: "Placement"
+      - figma: "Div"
+    targets:
+      - kind: "derived-prop"
+        component: "STooltipContent"
+        name: "align"
+        values:
+          "Top/Left": "start"
+          "Top/Center": "center"
+          "Top/Right": "end"
+          "Bottom/Left": "start"
+          "Bottom/Center": "center"
+          "Bottom/Right": "end"
+          "Left/Top": "start"
+          "Left/Center": "center"
+          "Left/Bottom": "end"
+          "Right/Top": "start"
+          "Right/Center": "center"
+          "Right/Bottom": "end"
+  - figma: "Title"
+    type: "TEXT"
+    default: "Title"
+    targets:
+      - kind: "slot-content"
+        component: "STooltipContent"
+        name: "default"
+        role: "title"
+  - figma: "Show Title"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-slot-content"
+        component: "STooltipContent"
+        name: "default"
+        role: "title"
+        visible_when: true
+  - figma: "Description"
+    type: "TEXT"
+    default: "This is an example of tooltip description"
+    targets:
+      - kind: "slot-content"
+        component: "STooltipContent"
+        name: "default"
+        role: "description"
+  - figma: "Show Description"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-slot-content"
+        component: "STooltipContent"
+        name: "default"
+        role: "description"
+        visible_when: true
+  - figma: "trigger"
+    type: "EXTERNAL"
+    description: "The Figma component does not define a trigger; provide the target element in STooltip's trigger slot."
+    targets:
+      - kind: "named-slot"
+        component: "STooltip"
+        name: "trigger"
+slots:
+  - figma_layer: "Content"
+    component: "STooltipContent"
+    slot: "default"

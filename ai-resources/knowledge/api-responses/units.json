@@ -1,0 +1,20 @@
+{
+  "units": [
+    {
+      "id": "informatika",
+      "name": "Program Studi Informatika"
+    },
+    {
+      "id": "sistem-informasi",
+      "name": "Program Studi Sistem Informasi"
+    },
+    {
+      "id": "akuntansi",
+      "name": "Program Studi Akuntansi"
+    },
+    {
+      "id": "manajemen",
+      "name": "Program Studi Manajemen"
+    }
+  ]
+}

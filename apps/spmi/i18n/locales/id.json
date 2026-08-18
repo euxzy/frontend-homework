@@ -1,0 +1,89 @@
+{
+  "about": {
+    "assignment": {
+      "eyebrow": "Frontend Homework",
+      "title": "Implementasi Fitur SPMI dari Figma",
+      "description": "Kerjakan fitur aplikasi berdasarkan desain yang disediakan. Pastikan hasil implementasi terintegrasi dengan baik ke dalam aplikasi ini.",
+        "design_title": "Desain Referensi",
+        "design_description": "Gunakan desain Figma berikut sebagai acuan untuk fitur yang akan diimplementasikan.",
+        "figma_mcp_hint": "Keywords: Figma MCP",
+        "open_figma": "Buka desain di Figma",
+      "steps_title": "Tahapan Pengerjaan",
+      "steps": {
+        "repository": "Pahami isi, struktur, teknologi, konvensi, dan pola implementasi yang sudah tersedia di repository.",
+        "login": "Login ke aplikasi menggunakan kredensial yang tersedia sebelum mulai mengerjakan fitur.",
+        "implement": "Pelajari desain Figma, lalu implementasikan fitur yang ditunjukkan pada desain tersebut.",
+        "ai_agent": "Gunakan AI coding agent untuk membantu proses analisis dan implementasi. Repository telah menyediakan resource pendukung yang relevan.",
+        "docker": "Pastikan aplikasi dapat di-deploy menggunakan Docker.",
+        "implementations_api": "Gunakan endpoint GET /api/implementations untuk data pelaksanaan audit."
+      },
+      "requirements_title": "Ketentuan Implementasi",
+      "requirements": {
+        "conventions": "Ikuti arsitektur, struktur folder, design system, dan konvensi yang telah digunakan repository.",
+        "responsive": "Pastikan tampilan berfungsi dengan baik pada ukuran layar yang relevan.",
+        "reuse": "Gunakan komponen yang tersedia apabila sesuai dan hindari duplikasi tanpa alasan yang jelas.",
+        "i18n": "Gunakan mekanisme internasionalisasi yang telah tersedia untuk teks antarmuka.",
+        "scope": "Jangan mengubah bagian aplikasi yang tidak berhubungan dengan fitur."
+      },
+      "credentials_title": "Kredensial Login",
+      "username": "Username",
+      "password": "Password",
+      "submission_title": "Pengumpulan",
+      "submission": {
+        "fork": "Fork repository ini ke akun GitHub Anda.",
+        "branch": "Kerjakan pada branch Anda sendiri.",
+        "verify": "Pastikan lint dan build berhasil dijalankan.",
+        "pr": "Buat Pull Request agar hasil implementasi dapat diperiksa.",
+        "summary": "Sertakan ringkasan perubahan dan hasil verifikasi pada deskripsi Pull Request."
+      }
+    }
+  },
+  "contact": {
+    "email": "Email",
+    "phone": "Telepon",
+    "whatsapp": "WhatsApp"
+  },
+  "language": {
+    "label": "Pilih bahasa",
+    "indonesian": "Bahasa Indonesia",
+    "english": "English"
+  },
+  "navigation": {
+    "label": "Navigasi utama",
+    "logo_alt": "Logo Kampus Indonesia",
+    "university_name": "Kampus Indonesia",
+    "system_name": "Sistem Penjaminan Mutu Internal",
+    "notifications": "Notifikasi",
+    "profile": "Profil pengguna",
+    "user_name": "Jay Rakabuming",
+    "user_role": "Badan Penjaminan Mutu",
+    "menus": {
+      "data": "Data SPMI",
+      "preparation": "Persiapan SPMI",
+      "process": "Proses SPMI",
+      "repository": "Repositori SPMI"
+    }
+  },
+  "login": {
+    "university_name": "Universitas Suteki",
+    "system_name": "Sistem Penjaminan Mutu Internal",
+    "logo_alt": "Logo Suteki",
+    "campus_alt": "Gedung kampus",
+    "contact_title": "Kontak",
+    "copyright": "Hak Cipta 2026 Universitas Suteki",
+    "privacy_policy": "Kebijakan Privasi",
+    "welcome_title": "Selamat datang kembali",
+    "welcome_subtitle": "Masuk untuk melanjutkan ke akun Anda.",
+    "google_alt": "Google",
+    "google_sign_in": "Masuk dengan Google",
+    "or": "atau",
+    "username_label": "Nama pengguna atau email",
+    "username_placeholder": "Masukkan nama pengguna atau email",
+    "username_required": "Nama pengguna atau email wajib diisi",
+    "password_label": "Kata sandi",
+    "password_placeholder": "Masukkan kata sandi",
+    "password_required": "Kata sandi wajib diisi",
+    "forgot_password": "Lupa kata sandi?",
+    "submit": "Masuk"
+  }
+}

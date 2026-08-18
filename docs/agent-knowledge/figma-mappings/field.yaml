@@ -1,0 +1,70 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=779-12872&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "779:12872"
+  component_set: "Input Field"
+code:
+  component: "SField"
+  source: "lib/components/field/Field.vue"
+  import: "import { SField } from '@sutekitechid/sicoco-v3-next'"
+  role: "generic form-control wrapper"
+  composition:
+    - component: "SField"
+      role: "field-wrapper"
+    - slot: "default"
+      role: "form-control"
+      accepts:
+        - "SInput"
+        - "STextarea"
+        - "SRichTextEditor"
+        - "SRadioGroup"
+        - "SDatePicker"
+properties:
+  - figma: "Title"
+    type: "TEXT"
+    default: "Title Label"
+    targets:
+      - kind: "prop"
+        component: "SField"
+        name: "label"
+        depends_on:
+          - "Show Title"
+  - figma: "Show Title"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-prop"
+        component: "SField"
+        name: "label"
+  - figma: "Show Required"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "prop"
+        component: "SField"
+        name: "required"
+  - figma: "Sub Header"
+    type: "TEXT"
+    default: "Ini berisi keterangan jika diperlukan"
+    targets:
+      - kind: "prop"
+        component: "SField"
+        name: "description"
+        depends_on:
+          - "Show Sub Header"
+  - figma: "Show Sub Header"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-prop"
+        component: "SField"
+        name: "description"
+  - figma: "Input"
+    type: "INSTANCE"
+    targets:
+      - kind: "slot-content"
+        component: "SField"
+        slot: "default"
+        content: "form-control"

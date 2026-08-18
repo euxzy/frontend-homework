@@ -1,0 +1,64 @@
+{
+  "implementations": [
+    {
+      "id": "implementation-1",
+      "period_id": "2025-ganjil",
+      "unit": {
+        "id": "informatika",
+        "name": "Program Studi Informatika"
+      },
+      "audit_name": "Audit Mutu Internal 2025",
+      "instrument": "Paket Instrumen Audit Program Studi",
+      "filling_date": {
+        "start": "2025-09-01T00:00:00.000Z",
+        "end": "2025-09-30T23:59:59.000Z"
+      },
+      "filling_progress": 75
+    },
+    {
+      "id": "implementation-2",
+      "period_id": "2025-ganjil",
+      "unit": {
+        "id": "sistem-informasi",
+        "name": "Program Studi Sistem Informasi"
+      },
+      "audit_name": "Audit Mutu Internal 2025",
+      "instrument": "Paket Instrumen Audit Program Studi",
+      "filling_date": {
+        "start": "2025-09-01T00:00:00.000Z",
+        "end": "2025-09-30T23:59:59.000Z"
+      },
+      "filling_progress": 40
+    },
+    {
+      "id": "implementation-3",
+      "period_id": "2025-genap",
+      "unit": {
+        "id": "akuntansi",
+        "name": "Program Studi Akuntansi"
+      },
+      "audit_name": "Audit Mutu Internal 2025",
+      "instrument": "Paket Instrumen Audit Fakultas",
+      "filling_date": {
+        "start": "2026-02-01T00:00:00.000Z",
+        "end": "2026-02-28T23:59:59.000Z"
+      },
+      "filling_progress": 100
+    },
+    {
+      "id": "implementation-4",
+      "period_id": "2025-genap",
+      "unit": {
+        "id": "manajemen",
+        "name": "Program Studi Manajemen"
+      },
+      "audit_name": "Audit Mutu Internal 2025",
+      "instrument": "Paket Instrumen Audit Fakultas",
+      "filling_date": {
+        "start": "2026-02-01T00:00:00.000Z",
+        "end": "2026-02-28T23:59:59.000Z"
+      },
+      "filling_progress": 0
+    }
+  ]
+}

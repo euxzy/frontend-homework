@@ -1,0 +1,85 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=663-138724&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "663:138724"
+  component_set: "text-editor"
+code:
+  component: "SRichTextEditor"
+  source: "lib/components/rich-editor/RichTextEditor.vue"
+  import: "import { SRichTextEditor } from '@sutekitechid/sicoco-v3-next'"
+properties:
+  - figma: "placeholder"
+    type: "TEXT"
+    default: "Tambahkan keterangan......"
+    targets:
+      - kind: "prop"
+        component: "SRichTextEditor"
+        name: "placeholder"
+  - figma: "State"
+    type: "VARIANT"
+    default: "Default"
+    options:
+      - "Default"
+      - "Disabled"
+      - "Read Only"
+    targets:
+      - kind: "prop"
+        component: "SRichTextEditor"
+        name: "disabled"
+        values:
+          "Disabled": true
+      - kind: "prop"
+        component: "SRichTextEditor"
+        name: "readonly"
+        values:
+          "Read Only": true
+  - figma: "formatting text"
+    type: "DERIVED"
+    description: "Build toolbarItems from enabled Figma toolbar options; omit the prop when every mapped option is enabled."
+    sources:
+      - figma: "show undo?"
+        maps_to: "undo"
+      - figma: "show redo?"
+        maps_to: "redo"
+      - figma: "show type text?"
+        maps_to: "header"
+      - figma: "show align?"
+        maps_to: "alignment"
+      - figma: "show text color?"
+        maps_to: "color"
+      - figma: "show bold?"
+        maps_to: "bold"
+      - figma: "show italic?"
+        maps_to: "italic"
+      - figma: "show underline?"
+        maps_to: "underline"
+      - figma: "Strikethrough"
+        maps_to: "strike"
+      - figma: "show Clear Formatting?"
+        maps_to: "clean"
+      - figma: "show Bulleted List?"
+        maps_to: "list-bullet"
+      - figma: "show Numbered List?"
+        maps_to: "list-ordered"
+      - figma: "show Hyperlink?"
+        maps_to: "link"
+      - figma: "Insert Image"
+        maps_to: "image"
+      - figma: "show Blockquote?"
+        maps_to: "blockquote"
+      - figma: "show Code Block?"
+        maps_to: "code-block"
+      - figma: "show Horizontal Rule?"
+        maps_to: "horizontal-rule"
+    targets:
+      - kind: "derived-prop"
+        component: "SRichTextEditor"
+        name: "toolbarItems"
+        omit_when_all: true
+composition:
+  - name: "formatting text"
+    figma_type: "INSTANCE"
+    figma_id: "663:139037"
+    maps_to: "toolbarItems"

@@ -1,0 +1,66 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=2153-4234&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "2153:4234"
+  component_set: "Master Dropdown"
+code:
+  component: "SDropdown"
+  source: "lib/components/dropdown"
+  import: "import { SDropdown, SDropdownItem } from '@sutekitechid/sicoco-v3-next'"
+  composition:
+    - component: "SDropdown"
+      role: "root"
+    - component: "SDropdownItem"
+      role: "option"
+properties:
+  - figma: "Single"
+    type: "VARIANT"
+    default: "False"
+    options:
+      - "False"
+      - "True"
+    targets:
+      - kind: "prop"
+        component: "SDropdown"
+        name: "multiple"
+        values:
+          "False": true
+          "True": false
+  - figma: "Search"
+    type: "VARIANT"
+    default: "False"
+    options:
+      - "False"
+      - "True"
+      - "Not Found"
+    targets:
+      - kind: "prop"
+        component: "SDropdown"
+        name: "searchable"
+        values:
+          "False": false
+          "True": true
+          "Not Found": true
+  - figma: "Slot"
+    type: "SLOT"
+    targets:
+      - kind: "slot"
+        component: "SDropdown"
+        name: "default"
+        accepts: "SDropdownItem"
+  - figma: "modelValue"
+    type: "EXTERNAL"
+    description: "Bind the selected option or options with v-model."
+    targets:
+      - kind: "model"
+        component: "SDropdown"
+        name: "modelValue"
+layers:
+  - figma_layer: "Item"
+    component: "SDropdownItem"
+    props:
+      - "value"
+      - "disabled"
+    slot: "default"

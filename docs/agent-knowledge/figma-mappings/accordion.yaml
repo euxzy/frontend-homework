@@ -1,0 +1,73 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=743-9165&m=dev"
+  node_id: "743:9165"
+  component_set: "Accordion"
+code:
+  component: "SAccordion"
+  source: "lib/components/accordion"
+  import: "import { SAccordion, SAccordionItem, SAccordionTrigger, SAccordionContent } from '@sutekitechid/sicoco-v3-next'"
+  composition:
+    - component: "SAccordion"
+      role: "root"
+    - component: "SAccordionItem"
+      role: "item"
+    - component: "SAccordionTrigger"
+      role: "trigger"
+    - component: "SAccordionContent"
+      role: "content"
+properties:
+  - figma: "type"
+    type: "VARIANT"
+    default: "Full container"
+    options:
+      - "Line"
+      - "Full container"
+    targets:
+      - kind: "prop"
+        component: "SAccordion"
+        name: "variant"
+        values:
+          "Line": "flush"
+          "Full container": "default"
+  - figma: "State"
+    type: "VARIANT"
+    default: "Default"
+    options:
+      - "Default"
+      - "Hover"
+      - "Inactive"
+      - "Active"
+    targets:
+      - kind: "interaction-state"
+        component: "SAccordionItem"
+        values:
+          "Default": "closed"
+          "Hover": "closed"
+          "Active": "open"
+          "Inactive": "disabled"
+      - kind: "prop"
+        component: "SAccordionItem"
+        name: "disabled"
+        values:
+          "Default": false
+          "Hover": false
+          "Active": false
+          "Inactive": true
+      - kind: "model"
+        component: "SAccordion"
+        name: "modelValue"
+        item_value: "item-1"
+        values:
+          "Default": null
+          "Hover": null
+          "Active": "item-1"
+          "Inactive": null
+slots:
+  - figma_layer: "Header"
+    component: "SAccordionTrigger"
+    slot: "label"
+  - figma_layer: "Description"
+    component: "SAccordionContent"
+    slot: "default"

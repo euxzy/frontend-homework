@@ -1,0 +1,107 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=690-69877&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "690:69877"
+  component_set: "Button"
+code:
+  component: "SButton"
+  source: "lib/components/button/Button.vue"
+  import: "import { SButton } from '@sutekitechid/sicoco-v3-next'"
+properties:
+  - figma: "Icon Leading"
+    type: "INSTANCE_SWAP"
+    default: "530:10154"
+    targets:
+      - kind: "prop"
+        name: "iconLeft"
+  - figma: "Icon Trailing"
+    type: "INSTANCE_SWAP"
+    default: "530:10149"
+    targets:
+      - kind: "prop"
+        name: "iconRight"
+  - figma: "Text"
+    type: "TEXT"
+    default: "Button Text"
+    targets:
+      - kind: "slot"
+  - figma: "Size"
+    type: "VARIANT"
+    default: "Large"
+    options:
+      - "Large"
+      - "Medium"
+      - "Small"
+      - "x-small"
+    targets:
+      - kind: "prop"
+        name: "size"
+        values:
+          "x-small": "xs"
+          "Small": "sm"
+          "Medium": "md"
+          "Large": "lg"
+  - figma: "Type"
+    type: "VARIANT"
+    default: "Primary"
+    options:
+      - "Primary"
+      - "Secondary"
+      - "Tertiary"
+      - "Secondary Neutral"
+      - "Tertiary Neutral"
+      - "Warning"
+      - "Warning Outline"
+      - "Success"
+      - "Success Outline"
+      - "Danger"
+      - "Danger Outline"
+      - "Danger Tertiary"
+    targets:
+      - kind: "prop"
+        name: "variant"
+        values:
+          "Primary": "primary"
+          "Secondary": "secondary-primary"
+          "Tertiary": "tertiary-primary"
+          "Secondary Neutral": "neutral"
+          "Tertiary Neutral": "link-neutral"
+          "Warning": "warning"
+          "Warning Outline": "secondary-warning"
+          "Success": "success"
+          "Success Outline": "secondary-success"
+          "Danger": "danger"
+          "Danger Outline": "secondary-danger"
+          "Danger Tertiary": "tertiary-danger"
+  - figma: "Icon"
+    type: "VARIANT"
+    default: "Both"
+    options:
+      - "Only"
+      - "False"
+      - "Leading"
+      - "Trailing"
+      - "Both"
+    targets:
+      - kind: "unmapped"
+        reason: "Derived from the iconLeft and iconRight instance-swap props."
+  - figma: "State"
+    type: "VARIANT"
+    default: "Default"
+    options:
+      - "Default"
+      - "Hover"
+      - "Focused"
+      - "Pressed"
+      - "Disabled"
+    targets:
+      - kind: "prop"
+        name: "disabled"
+        values:
+          "Default": false
+          "Hover": false
+          "Focused": false
+          "Pressed": false
+          "Disabled": true

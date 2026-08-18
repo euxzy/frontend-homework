@@ -1,0 +1,123 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=815-3680&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "815:3680"
+  component_set: "Alert"
+code:
+  component: "SAlert"
+  source: "lib/components/alert"
+  import: "import { SAlert, SAlertTitle, SAlertDescription } from '@sutekitechid/sicoco-v3-next'"
+  composition:
+    - component: "SAlert"
+      role: "root"
+    - component: "SAlertTitle"
+      role: "title"
+    - component: "SAlertDescription"
+      role: "description"
+properties:
+  - figma: "Variant"
+    type: "VARIANT"
+    default: "Info"
+    options:
+      - "Info"
+      - "Danger"
+      - "Warning"
+      - "Success"
+      - "Neutral"
+    targets:
+      - kind: "prop"
+        component: "SAlert"
+        name: "variant"
+        values:
+          "Info": "info"
+          "Danger": "danger"
+          "Warning": "warning"
+          "Success": "success"
+          "Neutral": null
+  - figma: "Show Dismiss"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "prop"
+        component: "SAlert"
+        name: "closable"
+  - figma: "Show Leading Icon"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "prop"
+        component: "SAlert"
+        name: "hasIcon"
+  - figma: "Leading Icon"
+    type: "INSTANCE_SWAP"
+    default: "530:10072"
+    targets:
+      - kind: "named-slot"
+        component: "SAlert"
+        name: "icon"
+  - figma: "Show Title"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SAlertTitle"
+        slot: "default"
+  - figma: "Title"
+    type: "TEXT"
+    default: "Label Title"
+    targets:
+      - kind: "slot"
+        component: "SAlertTitle"
+  - figma: "Show Description"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SAlertDescription"
+        slot: "default"
+  - figma: "Description"
+    type: "TEXT"
+    default: "Provide users with feedback or the status of an action"
+    targets:
+      - kind: "slot"
+        component: "SAlertDescription"
+  - figma: "Show Action Button"
+    type: "BOOLEAN"
+    default: false
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SAlertDescription"
+        slot: "default"
+        content: "action"
+  - figma: "Show Button"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SAlertDescription"
+        slot: "default"
+        content: "SButton"
+        depends_on:
+          - "Show Action Button"
+  - figma: "Show Link"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SAlertDescription"
+        slot: "default"
+        content: "a"
+        depends_on:
+          - "Show Action Button"
+  - figma: "Show Badges"
+    type: "BOOLEAN"
+    default: false
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SAlertDescription"
+        slot: "default"
+        content: "SBadge"
+        depends_on:
+          - "Show Action Button"

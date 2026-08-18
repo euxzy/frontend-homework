@@ -1,0 +1,133 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=1107-97277&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "1107:97277"
+  component: "Table Container"
+  layout: "Table Slots"
+code:
+  component: "SDataTable"
+  source: "lib/components/datatablev2"
+  import: "import { SDataTable, SDataTableColumn } from '@sutekitechid/sicoco-v3-next'"
+  layout: "data-grid"
+  transform: "Convert each Figma table column into an SDataTableColumn with header and default slots. Do not use the STable component family for this mapping."
+  required_structure:
+    - "SDataTable must receive the data prop."
+    - "Every visible Figma table column must be an SDataTableColumn child."
+    - "Column title must be rendered in the header slot."
+    - "Cell content must be rendered in the default slot."
+  invalid_substitutions:
+    - "STable"
+    - "STableHeader"
+    - "STableBody"
+    - "STableRow"
+    - "STableHead"
+    - "STableCell"
+  composition:
+    - component: "SDataTable"
+      role: "root"
+      required_props:
+        - "data"
+    - component: "SDataTableColumn"
+      role: "column-definition"
+      required_props:
+        - "field"
+layers:
+  - figma: "Table/Number,Table/Text,Table/Progress,Table/Actions"
+    component: "SDataTableColumn"
+    role: "column-definition"
+    properties:
+      - figma: "column_title"
+        type: "TEXT"
+        default: "Column 1"
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+            slot: "header"
+          - kind: "derived-prop"
+            component: "SDataTableColumn"
+            name: "field"
+            derive: "kebab-case title"
+      - figma: "Show Chevron"
+        type: "BOOLEAN"
+        default: false
+        targets:
+          - kind: "prop"
+            component: "SDataTableColumn"
+            name: "sortable"
+      - figma: "Instance"
+        type: "INSTANCE_SWAP"
+        default: "530:10158"
+        targets:
+          - kind: "slot-content"
+            component: "SDataTableColumn"
+            slot: "header"
+      - figma: "Type"
+        type: "VARIANT"
+        default: "Selector"
+        targets:
+          - kind: "prop"
+            component: "SDataTable"
+            name: "selectable"
+            values:
+              "Selector": true
+  - figma: "Body Cell"
+    component: "SDataTableColumn"
+    role: "cell-template"
+    properties:
+      - figma: "Value"
+        type: "TEXT"
+        default: "12,300"
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+            slot: "default"
+            expression: "row[field]"
+      - figma: "Text"
+        type: "TEXT"
+        default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+      - figma: "Name"
+        type: "TEXT"
+        default: "Sophia Williams"
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+      - figma: "Email"
+        type: "TEXT"
+        default: "sophia@mail.com"
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+      - figma: "Job Title"
+        type: "TEXT"
+        default: "Marketing Manager"
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+      - figma: "Since"
+        type: "TEXT"
+        default: "Since Aug, 2021"
+        targets:
+          - kind: "slot"
+            component: "SDataTableColumn"
+      - figma: "Symbol"
+        type: "TEXT"
+        default: "$"
+        targets:
+          - kind: "slot-content"
+            component: "SDataTableColumn"
+            slot: "default"
+      - figma: "Zebra"
+        type: "VARIANT"
+        default: "False"
+        targets:
+          - kind: "prop"
+            component: "SDataTable"
+            name: "rowClass"
+            values:
+              "False": null
+              "True": "(row, index) => index % 2 ? 'bg-neutral-50' : ''"

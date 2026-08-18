@@ -1,0 +1,94 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=1510-767&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "1510:767"
+  component_set: "Modal"
+code:
+  component: "SDialog"
+  source: "lib/components/dialog"
+  import: "import { SDialog, SDialogContent, SDialogDescription, SDialogFooter, SDialogHeader, SDialogTitle } from '@sutekitechid/sicoco-v3-next'"
+  composition:
+    - component: "SDialog"
+      role: "root"
+    - component: "SDialogContent"
+      role: "content"
+    - component: "SDialogHeader"
+      role: "header"
+    - component: "SDialogTitle"
+      role: "title"
+    - component: "SDialogDescription"
+      role: "body"
+    - component: "SDialogFooter"
+      role: "actions"
+properties:
+  - figma: "Size"
+    type: "VARIANT"
+    default: "Small"
+    options:
+      - "Small"
+      - "Medium"
+      - "Large"
+    targets:
+      - kind: "prop"
+        component: "SDialog"
+        name: "size"
+        values:
+          "Small": "sm"
+          "Medium": "md"
+          "Large": "lg"
+  - figma: "Close Button"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "prop"
+        component: "SDialog"
+        name: "showClose"
+  - figma: "Title Table"
+    type: "TEXT"
+    default: "Title Modal"
+    targets:
+      - kind: "slot-content"
+        component: "SDialogTitle"
+        name: "default"
+  - figma: "Show Header"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-content"
+        component: "SDialogHeader"
+        visible_when: true
+  - figma: "Modal Content"
+    type: "SLOT"
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SDialogContent"
+        name: "default"
+        visible_when:
+          property: "Type"
+          value: "Custom"
+  - figma: "Body Text"
+    type: "TEXT"
+    default: "Lorem ipsum dolor sit amet, in irure consequat veniam enim reprehenderit. Proident excepteur veniam sint occaecat dolore occaecat excepteur."
+    targets:
+      - kind: "conditional-slot-content"
+        component: "SDialogDescription"
+        name: "default"
+        visible_when:
+          property: "Type"
+          value: "Basic"
+  - figma: "Button Container"
+    type: "BOOLEAN"
+    default: true
+    targets:
+      - kind: "conditional-content"
+        component: "SDialogFooter"
+        visible_when: true
+  - figma: "open"
+    type: "EXTERNAL"
+    description: "Control modal visibility with SDialog's v-model:open binding."
+    targets:
+      - kind: "model"
+        component: "SDialog"
+        name: "open"

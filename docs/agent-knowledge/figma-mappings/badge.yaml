@@ -1,0 +1,108 @@
+# Figma-to-code mapping
+version: 1
+figma:
+  url: "https://www.figma.com/design/KQoco0BHFfrxfqUiw98C4p/SNSD?node-id=255-3107&m=dev"
+  file_key: "KQoco0BHFfrxfqUiw98C4p"
+  node_id: "255:3107"
+  component_set: "Badges Label"
+code:
+  component: "SBadge"
+  source: "lib/components/badge/Badge.vue"
+  import: "import { SBadge } from '@sutekitechid/sicoco-v3-next'"
+properties:
+  - figma: "Label"
+    type: "TEXT"
+    default: "Label"
+    targets:
+      - kind: "slot"
+  - figma: "Icon Badges"
+    type: "INSTANCE_SWAP"
+    default: "530:10072"
+    targets:
+      - kind: "slot-content"
+        slot: "default"
+  - figma: "Style"
+    type: "VARIANT"
+    default: "Soft"
+    options:
+      - "Soft"
+      - "Solid"
+    targets:
+      - kind: "prop"
+        name: "variant"
+        depends_on:
+          - "Color"
+        values:
+          "Soft":
+            "Neutral": "neutral"
+            "Primary": "primary"
+            "Success": "success"
+            "Warning": "warning"
+            "Danger": "danger"
+            "Secondary": "secondary"
+            "Info": null
+          "Solid":
+            "Neutral": "neutral solid"
+            "Primary": "primary solid"
+            "Success": "success solid"
+            "Warning": "warning solid"
+            "Danger": "danger solid"
+            "Secondary": "secondary solid"
+            "Info": null
+  - figma: "Size"
+    type: "VARIANT"
+    default: "Small"
+    options:
+      - "Small"
+      - "Medium"
+      - "Large"
+    targets:
+      - kind: "prop"
+        name: "size"
+        values:
+          "Small": "small"
+          "Medium": "medium"
+          "Large": "large"
+  - figma: "Color"
+    type: "VARIANT"
+    default: "Neutral"
+    options:
+      - "Neutral"
+      - "Primary"
+      - "Success"
+      - "Warning"
+      - "Danger"
+      - "Secondary"
+      - "Info"
+    targets: []
+  - figma: "Icon"
+    type: "VARIANT"
+    default: "False"
+    options:
+      - "False"
+      - "Right"
+      - "Only"
+      - "Left"
+    targets:
+      - kind: "slot-layout"
+        slot: "default"
+        depends_on:
+          - "Icon Badges"
+          - "Label"
+        values:
+          "False": ["Label"]
+          "Left": ["Icon Badges", "Label"]
+          "Right": ["Label", "Icon Badges"]
+          "Only": ["Icon Badges"]
+  - figma: "Shape"
+    type: "VARIANT"
+    default: "Fully Rounded"
+    options:
+      - "Fully Rounded"
+      - "Squared"
+    targets:
+      - kind: "prop"
+        name: "rounded"
+        values:
+          "Fully Rounded": true
+          "Squared": false
