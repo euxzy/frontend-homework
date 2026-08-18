@@ -8,7 +8,7 @@ figma:
 code:
   component: "SInput"
   source: "lib/components/input/Input.vue"
-  import: "import { SInput } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SInput } from '@sutekipub/sicoco-v3-next'"
 properties:
   - figma: "Placeholder"
     type: "TEXT"

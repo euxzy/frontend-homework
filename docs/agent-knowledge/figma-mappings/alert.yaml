@@ -8,7 +8,7 @@ figma:
 code:
   component: "SAlert"
   source: "lib/components/alert"
-  import: "import { SAlert, SAlertTitle, SAlertDescription } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SAlert, SAlertTitle, SAlertDescription } from '@sutekipub/sicoco-v3-next'"
   composition:
     - component: "SAlert"
       role: "root"

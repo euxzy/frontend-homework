@@ -8,7 +8,7 @@ figma:
 code:
   component: "STooltip"
   source: "lib/components/tooltip"
-  import: "import { STooltip, STooltipContent } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { STooltip, STooltipContent } from '@sutekipub/sicoco-v3-next'"
   composition:
     - component: "STooltip"
       role: "root"

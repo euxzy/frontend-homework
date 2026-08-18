@@ -110,7 +110,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { SButton, SFormInput, SInput } from '@sutekitechid/sicoco-v3-next'
+import { SButton, SFormInput, SInput } from '@sutekipub/sicoco-v3-next'
 
 import Field from '~/components/Field.vue'
 

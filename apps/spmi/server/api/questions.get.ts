@@ -2,7 +2,7 @@ import { defineEventHandler, getQuery } from 'h3';
 
 import { periods } from '../data/periods';
 
-const TOTAL_QUESTIONS = 10;
+const TOTAL_QUESTIONS = 100000;
 
 export function getQuestions(periodId?: string) {
   const questions = Array.from({ length: TOTAL_QUESTIONS }, (_, index) => {

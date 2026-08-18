@@ -8,7 +8,7 @@ figma:
 code:
   component: "SButton"
   source: "lib/components/button/Button.vue"
-  import: "import { SButton } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SButton } from '@sutekipub/sicoco-v3-next'"
 properties:
   - figma: "Icon Leading"
     type: "INSTANCE_SWAP"

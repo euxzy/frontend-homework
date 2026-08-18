@@ -9,7 +9,7 @@ figma:
 code:
   component: "SDataTable"
   source: "lib/components/datatablev2"
-  import: "import { SDataTable, SDataTableColumn } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SDataTable, SDataTableColumn } from '@sutekipub/sicoco-v3-next'"
   layout: "data-grid"
   transform: "Convert each Figma table column into an SDataTableColumn with header and default slots. Do not use the STable component family for this mapping."
   required_structure:

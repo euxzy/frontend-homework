@@ -8,7 +8,7 @@ figma:
 code:
   component: "SField"
   source: "lib/components/field/Field.vue"
-  import: "import { SField } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SField } from '@sutekipub/sicoco-v3-next'"
   role: "generic form-control wrapper"
   composition:
     - component: "SField"

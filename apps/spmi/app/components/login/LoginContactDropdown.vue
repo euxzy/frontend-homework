@@ -43,7 +43,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { SDropdown } from '@sutekitechid/sicoco-v3-next'
+import { SDropdown } from '@sutekipub/sicoco-v3-next'
 
 export interface ContactItem {
 	icon: string

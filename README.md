@@ -9,7 +9,7 @@ Starter repository untuk frontend application Sistem Penjaminan Mutu Internal (S
 - Vue 3 dan TypeScript
 - `@nuxtjs/i18n`
 - Tailwind CSS 4
-- Sicoco Next (`@sutekitechid/sicoco-v3-next`)
+- Sicoco Next (`@sutekipub/sicoco-v3-next`)
 - Vitest dan Playwright
 
 ## Prerequisites

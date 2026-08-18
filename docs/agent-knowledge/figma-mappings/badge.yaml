@@ -8,7 +8,7 @@ figma:
 code:
   component: "SBadge"
   source: "lib/components/badge/Badge.vue"
-  import: "import { SBadge } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SBadge } from '@sutekipub/sicoco-v3-next'"
 properties:
   - figma: "Label"
     type: "TEXT"

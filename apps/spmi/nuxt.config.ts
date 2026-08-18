@@ -72,8 +72,8 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/styles.css',
-		'@sutekitechid/sicoco-v3-next/dist/assets/sicoco-v3-next.css',
-    '@sutekitechid/sicoco-v3-next/dist/assets/icomoon/style.css',
+    '@sutekipub/sicoco-v3-next/dist/assets/sicoco-v3-next.css',
+    '@sutekipub/sicoco-v3-next/dist/assets/icomoon/style.css',
   ],
   vite: {
     plugins: [tailwindcss(), nxViteTsPaths()],

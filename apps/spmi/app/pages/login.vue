@@ -68,7 +68,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { SButton } from '@sutekitechid/sicoco-v3-next'
+import { SButton } from '@sutekipub/sicoco-v3-next'
 
 import LoginContactDropdown from '~/components/login/LoginContactDropdown.vue'
 import type { ContactItem } from '~/components/login/LoginContactDropdown.vue'

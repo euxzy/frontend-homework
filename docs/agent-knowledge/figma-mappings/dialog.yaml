@@ -8,7 +8,7 @@ figma:
 code:
   component: "SDialog"
   source: "lib/components/dialog"
-  import: "import { SDialog, SDialogContent, SDialogDescription, SDialogFooter, SDialogHeader, SDialogTitle } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SDialog, SDialogContent, SDialogDescription, SDialogFooter, SDialogHeader, SDialogTitle } from '@sutekipub/sicoco-v3-next'"
   composition:
     - component: "SDialog"
       role: "root"

@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/i18n": "^10.2.0",
-    "@sutekitechid/sicoco-v3-next": "4.0.0-alpha.27"
+    "@sutekipub/sicoco-v3-next": "4.0.0-alpha.27"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

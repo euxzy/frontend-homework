@@ -1,6 +1,6 @@
-@import '@sutekitechid/sicoco-v3-next/dist/config/tailwind.css';
+@import '@sutekipub/sicoco-v3-next/dist/config/tailwind.css';
 @source "../..";
-@source "../../../../../node_modules/@sutekitechid/sicoco-v3-next/**/*.{js,ts,jsx,tsx,vue}";
+@source "../../../../../node_modules/@sutekipub/sicoco-v3-next/**/*.{js,ts,jsx,tsx,vue}";
 
 @theme {
     --color-navigation-main: #f85c0e;
@@ -8,6 +8,7 @@
 }
 
 @layer base {
+
     *,
     ::after,
     ::before,

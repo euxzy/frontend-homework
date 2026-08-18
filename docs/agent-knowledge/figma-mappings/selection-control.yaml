@@ -8,7 +8,7 @@ figma:
 code:
   component: "SCheckboxGroup"
   source: "lib/components/checkbox/CheckboxGroup.vue"
-  import: "import { SCheckbox, SCheckboxGroup, SRadioGroup, SRadioGroupItem, SSwitch } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SCheckbox, SCheckboxGroup, SRadioGroup, SRadioGroupItem, SSwitch } from '@sutekipub/sicoco-v3-next'"
   composition:
     - figma_value: "Radio"
       components:

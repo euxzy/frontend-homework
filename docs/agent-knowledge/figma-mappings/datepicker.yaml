@@ -8,7 +8,7 @@ figma:
 code:
   component: "SDatePicker"
   source: "lib/components/date-picker/DatePicker.vue"
-  import: "import { SDatePicker } from '@sutekitechid/sicoco-v3-next'"
+  import: "import { SDatePicker } from '@sutekipub/sicoco-v3-next'"
   inferred:
     - figma_layer: "Input > Placeholder"
       value: "DD/MM/YYYY - DD/MM/YYYY"
